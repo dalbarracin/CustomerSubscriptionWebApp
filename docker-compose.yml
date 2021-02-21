@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  customersubscriptionwebapp:
+    image: ${DOCKER_REGISTRY-}customersubscriptionwebapp
+    build:
+      context: .
+      dockerfile: CustomerSubscriptionWebApp/Dockerfile
+    ports:
+      - "62231:80"
+    links:
+      - customersubscriptionapi
+    networks:
+      - backend
+
+  customersubscriptionapi:
+    image: dalbarracin/customersubscriptionapi:v1.0
+    ports:
+      - "44387:80"
+    networks:
+      - backend
+
+networks:
+    backend:
+      driver: bridge
