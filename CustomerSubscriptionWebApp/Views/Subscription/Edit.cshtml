@@ -1,0 +1,57 @@
+﻿@model CustomerSubscriptionWebApp.Models.CustomerSubscriptionViewModel
+
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Subscription</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="Subscription.Id" class="form-control" type="hidden" />
+                <span asp-validation-for="Subscription.Id" class="text-danger" type="hidden"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Subscription.CustomerId" class="form-control" type="hidden" />
+                <span asp-validation-for="Subscription.CustomerId" class="text-danger" type="hidden"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Customer</label>
+                <select asp-for="CustomerSelected" asp-items="Model.Customers" class="form-control"></select>
+                <span asp-validation-for="CustomerSelected" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Subscription.ProductId" class="form-control" type="hidden" />
+                <span asp-validation-for="Subscription.ProductId" class="text-danger" type="hidden"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Product</label>
+                <select asp-for="ProductSelected" asp-items="Model.Products" class="form-control"></select>
+                <span asp-validation-for="ProductSelected" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subscription.Created" class="control-label"></label>
+                <input asp-for="Subscription.Created" class="form-control" type="date"/>
+                <span asp-validation-for="Subscription.Created" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
