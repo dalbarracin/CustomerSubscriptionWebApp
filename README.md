@@ -2,7 +2,7 @@
 Web Application for managing customers subscription, customers and products developed on ASP.Net Core 3.1
 
 
-##Web MVC application
+## Web MVC application
 This code sample presents a Web application based on Net Core 3.1 and MVC 5 as a presentation project for managin Customers and Products Master data as well as Subscriptions (Customers being register with multiples Products).
 
 The applications contains MVC Razor pages and a custom Nuget Package as a simple class library for consuming data from an existing API application.
@@ -12,12 +12,12 @@ The single nuget package can be found on Nuget.org (https://www.nuget.org/packag
 The Web API application can be downloaded as a single container on Docker hub (https://hub.docker.com/repository/docker/dalbarracin/customersubscriptionapi) as well as Github (https://github.com/dalbarracin/CustomerSubscriptionAPI)
 
 
-##Requirements
+## Requirements
 
 - Docker installed
 - Docker compose configured
 
-##Running the Application
+## Running the Application
 
 1. Download source code from Github
 
